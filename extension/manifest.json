@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "CommentCraft AI",
+  "version": "1.1",
+  "description": "Generate tone-based AI comments and insert them into any comment box.",
+  "host_permissions": ["https://*.app.github.dev/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
